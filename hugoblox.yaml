@@ -1,0 +1,12 @@
+hugoblox:
+  params:
+    jardinDestacados:
+      - title: "Visiones Urbanas"
+        url: "/blog/visiones-urbanas"
+        summary: "Exploración fotográfica de la ciudad moderna."
+      - title: "Luz Natural"
+        url: "/blog/luz-natural"
+        summary: "Serie dedicada a la luz en fotografía documental."
+      - title: "Rostros y Emociones"
+        url: "/blog/rostros-emociones"
+        summary: "Retratos con expresión cruda y realismo emocional."
