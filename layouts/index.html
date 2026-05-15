@@ -1,9 +1,32 @@
 {{ define "main" }}
-    <h2>Galería / Contenido</h2>
-    {{ range .Pages }}
-        <article class="photo-post">
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            {{ .Content }}
-        </article>
-    {{ end }}
+<div class="index-container">
+    <div class="index-visuals">
+        {{ range first 2 .Site.RegularPages }}
+            <div class="visual-item">
+                {{ with .Params.featured_image }}
+                    <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+                {{ else }}
+                    <div class="placeholder-box">+</div>
+                {{ end }}
+                <div class="visual-meta">
+                    <span>{{ .Params.client | default "BOÜE" }}</span>
+                    <span>{{ .Title }}</span>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+
+    <div class="index-list">
+        <div class="list-header">
+            <span class="col-cat">Categoría</span>
+            <span class="col-proj">Proyecto / Entrada</span>
+        </div>
+        {{ range .Site.RegularPages }}
+        <a href="{{ .RelPermalink }}" class="list-row">
+            <span class="col-cat">{{ .Params.categories | default "General" }}</span>
+            <span class="col-proj">{{ .Title }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>
 {{ end }}
