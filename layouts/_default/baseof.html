@@ -1,72 +1,45 @@
----
-title: Base layout with Swiss grid and digital garden
-date: 2026-05-14
-summary: Tema base minimalista estilo Suizo para portafolio fotográfico con Jardín Digital y modos claro/oscuro.
-type: landing
-sections:
-  - block: hero
-    content:
-        html:
-          |
-            <!DOCTYPE html>
-            <html lang="es">
-            <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>{{ .Title }}</title>
-            <link rel="stylesheet" href="/css/style.css">
-            </head>
-            <body>
-              <div class="layout">
-                <nav class="sidebar fixed-left">
-                  <ul class="nav-list">
-                    <li><a href="#social">Redes Sociales</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#categories">Categorías</a></li>
-                  </ul>
-                </nav>
-            
-                <main class="content">
-                  <section class="left-column" aria-labelledby="nav-jardin">
-                    <h2 id="nav-jardin" class="section-title">Jardín Digital</h2>
-                    {{ with .Site.Params.jardinDestacados }}
-                      {{ range . }}
-                        <article class="post-highlight">
-                          <h3 class="post-title"><a href="{{ .url }}">{{ .title }}</a></h3>
-                          {{- if .summary }}<p class="post-summary">{{ .summary }}</p>{{ end }}
-                          <hr class="divider">
-                        </article>
-                      {{ end }}
-                    {{ else }}
-                      <p>No hay destacados configurados.</p>
-                    {{ end }}
-                  </section>
-            
-                  <section class="right-column" aria-label="Contenido visual">
-                    {{/* Contenido visual y fotografía combinado con posts indexados */}}
-                    {{ range .Pages.ByDate.Reverse }}
-                      <article class="photo-post">
-                        <div class="photo-wrapper">
-                          {{ with .Params.featured_image }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />{{ end }}
-                        </div>
-                        <h3 class="photo-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                        {{ with .Summary }}<p class="photo-summary">{{ . }}</p>{{ end }}
-                        <hr class="divider">
-                      </article>
-                    {{ end }}
-                  </section>
-                </main>
-            
-                <nav class="sidebar fixed-right">
-                  <ul class="nav-list">
-                    <li><a id="social" href="#">Redes Sociales</a></li>
-                    <li><a id="contact" href="#">Contacto</a></li>
-                    <li><a id="about" href="#">About</a></li>
-                    <li><a id="categories" href="#">Categorías</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </body>
-            </html>
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar fixed-left">
+            <ul class="nav-list">
+                <li><a href="#social">Redes Sociales</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#categories">Categorías</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="left-column">
+                <h2 class="section-title">Jardín Digital</h2>
+                {{ range .Site.RegularPages }}
+                <article class="post-highlight">
+                    <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p class="post-summary">{{ .Summary }}</p>
+                    <hr class="divider">
+                </article>
+                {{ end }}
+            </section>
+
+            <section class="right-column">
+                {{ block "main" . }}{{ end }}
+            </section>
+        </main>
+
+        <nav class="sidebar fixed-right">
+            <ul class="nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
