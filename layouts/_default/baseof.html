@@ -3,43 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
-    <div class="layout">
-        <nav class="sidebar fixed-left">
-            <ul class="nav-list">
-                <li><a href="#social">Redes Sociales</a></li>
-                <li><a href="#contact">Contacto</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#categories">Categorías</a></li>
-            </ul>
+    <header class="site-header">
+        <nav class="top-nav">
+            <div class="nav-left">
+                <a href="/">{{ .Site.Title }}</a>
+            </div>
+            <div class="nav-right">
+                <a href="#about">About</a>
+                <a href="#contact">Contacto</a>
+                <a href="#social">Instagram</a>
+            </div>
         </nav>
+    </header>
 
-        <main class="content">
-            <section class="left-column">
-                <h2 class="section-title">Jardín Digital</h2>
-                {{ range .Site.RegularPages }}
-                <article class="post-highlight">
-                    <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                    <p class="post-summary">{{ .Summary }}</p>
-                    <hr class="divider">
-                </article>
-                {{ end }}
-            </section>
-
-            <section class="right-column">
-                {{ block "main" . }}{{ end }}
-            </section>
-        </main>
-
-        <nav class="sidebar fixed-right">
-            <ul class="nav-list">
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Twitter</a></li>
-            </ul>
-        </nav>
-    </div>
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
 </body>
 </html>
