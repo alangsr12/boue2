@@ -1,4 +1,4 @@
-/* Reset y Estética General */
+/* Reset total */
 * {
     margin: 0;
     padding: 0;
@@ -9,18 +9,17 @@ body {
     background-color: #000;
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
-    overflow: hidden; /* Bloquea el scroll general */
+    overflow: hidden; 
     height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Header y Menú Fijo */
+/* Header Fijo */
 .site-header {
-    flex: 0 0 auto;
+    height: 60px;
     padding: 20px;
     border-bottom: 1px solid #333;
     background-color: #000;
+    position: relative;
     z-index: 100;
 }
 
@@ -33,58 +32,51 @@ body {
 
 /* Intro Fija */
 .site-intro {
-    flex: 0 0 auto;
+    height: 120px; /* Tamaño fijo para la intro */
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     border-bottom: 1px solid #333;
     background-color: #000;
-    z-index: 90;
 }
 
-.intro-column-left {
-    border-right: 1px solid #333;
-}
-
+.intro-column-left { border-right: 1px solid #333; }
 .intro-column-right {
-    padding: 30px 25px;
+    padding: 20px 25px;
     font-size: 11px;
     line-height: 1.6;
     text-transform: uppercase;
     color: #888;
 }
 
-/* Contenedor de Columnas con Scroll */
+/* Contenedor Main: ocupa el resto de la pantalla */
 main {
-    flex: 1 1 auto;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    overflow: hidden; /* Importante para que las columnas manden */
+    height: calc(100vh - 180px); /* 180px es la suma de header + intro */
 }
 
+/* Scroll independiente */
 .index-visuals, .index-list {
+    overflow-y: auto;
     height: 100%;
-    overflow-y: auto; /* Acá vuelve el scroll individual */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
-.index-visuals::-webkit-scrollbar, 
-.index-list::-webkit-scrollbar {
-    display: none;
-}
+/* Ocultar scrollbars */
+.index-visuals::-webkit-scrollbar, .index-list::-webkit-scrollbar { display: none; }
+.index-visuals, .index-list { -ms-overflow-style: none; scrollbar-width: none; }
 
 .index-visuals {
     padding: 40px;
     border-right: 1px solid #333;
 }
 
-/* Estilo de las Filas de la derecha */
+/* Estilo de Filas */
 .index-list {
     display: flex;
     flex-direction: column;
 }
 
-.list-header, .list-row {
+.list-row {
     display: grid;
     grid-template-columns: 150px 1fr;
     padding: 20px 25px;
@@ -94,14 +86,7 @@ main {
     color: inherit;
 }
 
-.list-header {
-    color: #444;
-    font-size: 10px;
-}
-
-.col-proj {
-    font-size: 20px;
-}
+.col-proj { font-size: 20px; }
 
 .placeholder-box {
     width: 100%;
@@ -111,8 +96,8 @@ main {
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
-    font-size: 30px;
     color: #333;
+    font-size: 30px;
 }
 
 a { color: inherit; text-decoration: none; }
