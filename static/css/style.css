@@ -1,36 +1,47 @@
+/* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: #191919;
     color: rgba(255, 255, 255, 0.85);
-    font-family: "Monument Grotesk Semi-Mono Variable", monospace;
-    overflow: hidden;
+    font-family: "Courier New", monospace;
+    overflow: hidden; /* Bloquea el scroll de la ventana */
     height: 100vh;
 }
 
-main {
+.main-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.2fr 1fr; /* Proporción de las dos columnas */
     height: 100vh;
+    width: 100%;
 }
 
-/* Columna Izquierda: Limpia */
-.index-visuals {
+/* Comportamiento de las columnas */
+.column-visuals, .column-info {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scroll-container {
+    height: 100%;
+    overflow-y: auto; /* Scroll independiente */
+    scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar { display: none; }
+
+/* Columna Izquierda (Panel Limpio) */
+.column-visuals {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-y: auto;
     padding: 40px;
-    height: 100vh;
 }
 
-/* Columna Derecha: Contenedor con scroll */
-.index-list {
+/* Columna Derecha (Navegación y Datos) */
+.column-info {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
 }
 
-/* Menú y Bio ahora son parte de la columna derecha */
+/* Estilos de los bloques derechos */
 .site-header {
     padding: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -40,38 +51,40 @@ main {
     z-index: 10;
 }
 
+.top-nav { display: flex; justify-content: space-between; font-size: 11px; text-transform: uppercase; }
+.top-nav a { color: #fff; text-decoration: none; }
+
 .site-intro {
     padding: 30px 25px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 11px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
 }
 
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    text-transform: uppercase;
-}
-
-/* Tabla de entradas */
+/* Filas de la tabla */
 .list-row {
     display: grid;
     grid-template-columns: 150px 1fr;
-    padding: 25px;
+    padding: 20px 25px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     color: inherit;
 }
 
-.col-proj { font-size: 2rem; text-transform: uppercase; }
-.col-cat { font-size: 10px; color: rgba(255, 255, 255, 0.4); }
+.col-proj { font-size: 1.8rem; text-transform: uppercase; color: #fff; }
+.col-cat { font-size: 10px; color: rgba(255, 255, 255, 0.4); padding-top: 5px; }
 
-/* Estética visuales */
+/* Caja de las fotos (izquierda) */
 .placeholder-box {
     width: 100%;
     aspect-ratio: 1.5;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #333;
 }

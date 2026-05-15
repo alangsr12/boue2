@@ -1,27 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOÜE</title>
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+</head>
 <body>
-    <main>
-        <div class="index-visuals">
-            {{ block "visuals" . }}{{ end }}
-        </div>
-        <div class="index-list">
-            <header class="site-header">
-                <nav class="top-nav">
-                    <div class="nav-left"><a href="/">BOÜE</a></div>
-                    <div class="nav-right">
-                        <a href="/about">ABOUT</a>
-                        <a href="/contacto">CONTACTO</a>
-                        <a href="/instagram">INSTAGRAM</a>
-                    </div>
-                </nav>
-            </header>
-
-            <section class="site-intro">
-                <p>{{ .Site.Data.intro.texto }}</p>
-            </section>
-
-            <div class="list-content">
-                {{ block "main" . }}{{ end }}
+    <main class="main-container">
+        <aside class="column-visuals">
+            <div class="scroll-container">
+                {{ block "visuals" . }}{{ end }}
             </div>
-        </div>
+        </aside>
+
+        <section class="column-info">
+            <div class="scroll-container">
+                <header class="site-header">
+                    <nav class="top-nav">
+                        <div class="nav-left"><a href="/">BOÜE</a></div>
+                        <div class="nav-right">
+                            <a href="/about">ABOUT</a>
+                            <a href="/contacto">CONTACTO</a>
+                            <a href="/instagram">INSTAGRAM</a>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="site-intro">
+                    <p>{{ .Site.Data.intro.texto }}</p>
+                </div>
+
+                <div class="content-list">
+                    {{ block "main" . }}{{ end }}
+                </div>
+            </div>
+        </section>
     </main>
 </body>
+</html>
