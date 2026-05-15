@@ -8,9 +8,29 @@
 </head>
 <body>
     <main class="main-container">
+        
         <aside class="column-visuals">
             <div class="scroll-container">
-                {{ block "visuals" . }}{{ end }}
+                
+                <div class="galeria-fotos">
+                    {{ $images := resources.Match "images/galeria/*" }}
+                    {{ range $images }}
+                        {{ $image := .Resize "1000x" }}
+                        <div class="visual-item">
+                            <img src="{{ $image.RelPermalink }}" alt="Visual">
+                        </div>
+                    {{ end }}
+                </div>
+
+                <div class="featured-list">
+                    <span class="label">Seleccionados</span>
+                    {{ range first 5 (where .Site.RegularPages "Params.featured" true) }}
+                        <a href="{{ .RelPermalink }}" class="featured-item">
+                            {{ .Title }}
+                        </a>
+                    {{ end }}
+                </div>
+
             </div>
         </aside>
 
@@ -36,6 +56,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 </body>
 </html>
