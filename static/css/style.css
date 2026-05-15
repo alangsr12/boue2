@@ -62,7 +62,6 @@ body {
     color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
 }
-
 /* Filas de la tabla */
 .list-row {
     display: grid;
