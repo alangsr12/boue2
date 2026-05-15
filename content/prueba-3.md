@@ -1,5 +1,5 @@
 ---
-date = '2026-04-15T06:03:28Z'
-draft = false
-title = 'Prueba 3'
+title: "Hola Mundo"
+date: 2026-05-09T00:00:00-03:00
+draft: false
 ---
