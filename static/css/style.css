@@ -1,4 +1,15 @@
-/* Reset total */
+/* 1. Variables de Cargo (extraídas de tu archivo) */
+:root {
+    --bg-color: #191919;
+    --swatch-1: rgba(255, 255, 255, 0.85); /* Títulos principales */
+    --swatch-2: rgba(255, 255, 255, 0.75); /* Párrafos */
+    --swatch-4: rgba(255, 255, 255, 0.4);  /* Categorías y meta */
+    --swatch-6: rgba(255, 255, 255, 0.1);  /* Bordes y líneas */
+    --font-mono: "Monument Grotesk Semi-Mono Variable", "Courier New", monospace;
+    --font-sans: "Diatype Variable", Helvetica, Arial, sans-serif;
+}
+
+/* 2. Reset y Estructura Base */
 * {
     margin: 0;
     padding: 0;
@@ -6,98 +17,140 @@
 }
 
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    overflow: hidden; 
+    background-color: var(--bg-color);
+    color: var(--swatch-2);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    line-height: 1.1;
+    overflow: hidden; /* Clave para el scroll independiente */
     height: 100vh;
 }
 
-/* Header Fijo */
+/* 3. Menú e Intro (Fijos arriba) */
+.site-header, .site-intro {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--bg-color);
+}
+
 .site-header {
     height: 60px;
-    padding: 20px;
-    border-bottom: 1px solid #333;
-    background-color: #000;
-    position: relative;
-    z-index: 100;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--swatch-6);
 }
 
 .top-nav {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
 
-/* Intro Fija */
 .site-intro {
-    height: 120px; /* Tamaño fijo para la intro */
+    top: 60px;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    border-bottom: 1px solid #333;
-    background-color: #000;
+    border-bottom: 1px solid var(--swatch-6);
 }
 
-.intro-column-left { border-right: 1px solid #333; }
-.intro-column-right {
-    padding: 20px 25px;
-    font-size: 11px;
-    line-height: 1.6;
+.intro-column-left { border-right: 1px solid var(--swatch-6); }
+.intro-column-right { 
+    padding: 2.5rem 1.5rem; 
+    font-size: 0.95rem; 
+    color: var(--swatch-4); 
     text-transform: uppercase;
-    color: #888;
+    line-height: 1.2;
+    max-width: 480px;
 }
 
-/* Contenedor Main: ocupa el resto de la pantalla */
+/* 4. Columnas de Contenido */
 main {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    height: calc(100vh - 180px); /* 180px es la suma de header + intro */
+    height: 100vh;
 }
 
-/* Scroll independiente */
 .index-visuals, .index-list {
+    height: 100vh;
     overflow-y: auto;
-    height: 100%;
+    padding-top: 220px; /* Suficiente espacio para el header + intro */
+    scrollbar-width: none; /* Ocultar scrollbar */
 }
 
-/* Ocultar scrollbars */
 .index-visuals::-webkit-scrollbar, .index-list::-webkit-scrollbar { display: none; }
-.index-visuals, .index-list { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* 5. Columna Izquierda (Visuales) */
 .index-visuals {
-    padding: 40px;
-    border-right: 1px solid #333;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-right: 1px solid var(--swatch-6);
 }
 
-/* Estilo de Filas */
+.placeholder-box {
+    width: 100%;
+    aspect-ratio: 1.5;
+    border: 1px solid var(--swatch-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--swatch-6);
+}
+
+.visual-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--swatch-4);
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+/* 6. Columna Derecha (Lista tipo Tabla) */
 .index-list {
     display: flex;
     flex-direction: column;
 }
 
-.list-row {
+.list-header {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    padding: 20px 25px;
-    border-bottom: 1px solid #333;
+    grid-template-columns: 180px 1fr;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--swatch-6);
+    font-size: 0.8rem;
+    color: var(--swatch-4);
     text-transform: uppercase;
-    text-decoration: none;
-    color: inherit;
 }
 
-.col-proj { font-size: 20px; }
+.list-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid var(--swatch-6);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
 
-.placeholder-box {
-    width: 100%;
-    aspect-ratio: 4/3;
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
-    color: #333;
-    font-size: 30px;
+.list-row:hover { opacity: 0.6; }
+
+.col-cat {
+    font-size: 0.9rem;
+    color: var(--swatch-4);
+    padding-top: 0.4rem;
+    text-transform: uppercase;
+}
+
+.col-proj {
+    font-family: var(--font-mono);
+    font-size: 2.2rem; /* Tamaño grande de Cargo */
+    color: var(--swatch-1);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 
 a { color: inherit; text-decoration: none; }
