@@ -1,4 +1,5 @@
-baseURL = 'https://alangsr.github.io/boue2/'
+baseURL = 'https://alangsr12.github.io/boue2/'
 languageCode = 'es-ar'
 title = 'BOÜE'
-theme = 'nombre-de-tu-tema'
+
+# NO pongas ninguna línea de 'theme' acá si estás usando layouts propios.
