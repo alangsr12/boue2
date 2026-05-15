@@ -1,15 +1,10 @@
 {{ define "main" }}
-<div class="index-container">
     <div class="index-visuals">
-        {{ range first 2 .Site.RegularPages }}
+        {{ range .Site.RegularPages }}
             <div class="visual-item">
-                {{ with .Params.featured_image }}
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}">
-                {{ else }}
-                    <div class="placeholder-box">+</div>
-                {{ end }}
+                <div class="placeholder-box">+</div>
                 <div class="visual-meta">
-                    <span>{{ .Params.client | default "BOÜE" }}</span>
+                    <span>BOÜE</span>
                     <span>{{ .Title }}</span>
                 </div>
             </div>
@@ -17,16 +12,11 @@
     </div>
 
     <div class="index-list">
-        <div class="list-header">
-            <span class="col-cat">Categoría</span>
-            <span class="col-proj">Proyecto / Entrada</span>
-        </div>
         {{ range .Site.RegularPages }}
         <a href="{{ .RelPermalink }}" class="list-row">
-            <span class="col-cat">{{ .Params.categories | default "General" }}</span>
+            <span class="col-cat">General</span>
             <span class="col-proj">{{ .Title }}</span>
         </a>
         {{ end }}
     </div>
-</div>
 {{ end }}
