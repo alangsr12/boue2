@@ -1,9 +1,0 @@
-baseURL: "https://github.io"
-title: "Jardín Digital"
-languageCode: "es"
-theme: ""
-
-# Esto le dice a Hugo que use tus propias carpetas en lugar de buscar un tema externo
-layoutsDir: "layouts"
-staticDir: "static"
-contentDir: "content"
