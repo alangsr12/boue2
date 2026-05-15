@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digital Garden on BOÜE</title>
+    <link>https://alangsr12.github.io/boue2/categories/digital-garden/</link>
+    <description>Recent content in Digital Garden on BOÜE</description>
+    <generator>Hugo</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://alangsr12.github.io/boue2/categories/digital-garden/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notas sobre el Jardín</title>
+      <link>https://alangsr12.github.io/boue2/entrada-2/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-2/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,11 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Project</title>
-    <link>/</link>
-    <description>Recent content on My New Hugo Project</description>
+    <title>BOÜE</title>
+    <link>https://alangsr12.github.io/boue2/</link>
+    <description>Recent content on BOÜE</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 -0300</lastBuildDate>
+    <atom:link href="https://alangsr12.github.io/boue2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hola Mundo</title>
+      <link>https://alangsr12.github.io/boue2/holamundo/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 -0300</pubDate>
+      <guid>https://alangsr12.github.io/boue2/holamundo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pensamientos Sueltos</title>
+      <link>https://alangsr12.github.io/boue2/entrada-10/</link>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-10/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interfaz Cargo</title>
+      <link>https://alangsr12.github.io/boue2/entrada-9/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bitácora de Obra</title>
+      <link>https://alangsr12.github.io/boue2/entrada-8/</link>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Minimalismo Funcional</title>
+      <link>https://alangsr12.github.io/boue2/entrada-7/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Luz y Sombra</title>
+      <link>https://alangsr12.github.io/boue2/entrada-6/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Archivo Técnico</title>
+      <link>https://alangsr12.github.io/boue2/entrada-5/</link>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estética Suiza</title>
+      <link>https://alangsr12.github.io/boue2/entrada-4/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas de Control</title>
+      <link>https://alangsr12.github.io/boue2/entrada-3/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Notas sobre el Jardín</title>
+      <link>https://alangsr12.github.io/boue2/entrada-2/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fragmentos de Rosario</title>
+      <link>https://alangsr12.github.io/boue2/entrada-1/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/entrada-1/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

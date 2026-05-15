@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Project</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on My New Hugo Project</description>
+    <title>Categories on BOÜE</title>
+    <link>https://alangsr12.github.io/boue2/categories/</link>
+    <description>Recent content in Categories on BOÜE</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>es-ar</language>
+    <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://alangsr12.github.io/boue2/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Escritos</title>
+      <link>https://alangsr12.github.io/boue2/categories/escritos/</link>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/escritos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>https://alangsr12.github.io/boue2/categories/web/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arquitectura</title>
+      <link>https://alangsr12.github.io/boue2/categories/arquitectura/</link>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/arquitectura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diseño</title>
+      <link>https://alangsr12.github.io/boue2/categories/dise%C3%B1o/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/dise%C3%B1o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fotografía</title>
+      <link>https://alangsr12.github.io/boue2/categories/fotograf%C3%ADa/</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/fotograf%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BOÜE</title>
+      <link>https://alangsr12.github.io/boue2/categories/bo%C3%BCe/</link>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/bo%C3%BCe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Domótica</title>
+      <link>https://alangsr12.github.io/boue2/categories/dom%C3%B3tica/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/dom%C3%B3tica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Digital Garden</title>
+      <link>https://alangsr12.github.io/boue2/categories/digital-garden/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://alangsr12.github.io/boue2/categories/digital-garden/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
