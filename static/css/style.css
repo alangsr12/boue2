@@ -17,9 +17,23 @@ body {
 }
 
 /* Comportamiento de las columnas */
-.column-visuals, .column-info {
-    height: 100vh;
-    overflow: hidden;
+.visual-item {
+    width: 100%;
+    margin-bottom: 2px; /* Espaciado mínimo entre fotos como en Cargo */
+    line-height: 0;     /* Elimina espacios fantasma abajo de la imagen */
+}
+
+.visual-item img {
+    width: 100%;        /* Se estira al ancho de la columna */
+    height: auto;       /* Mantiene la proporción */
+    display: block;
+    filter: grayscale(100%); /* Si querés mantener el look b&w */
+}
+
+/* Ajuste para que la columna izquierda no tenga aire de más */
+.column-visuals {
+    padding: 0; /* Cargo suele pegar las fotos al borde o dejar muy poco aire */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scroll-container {
