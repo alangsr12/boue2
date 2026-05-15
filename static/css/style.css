@@ -1,52 +1,37 @@
-/* 1. Variables de Cargo (extraídas de tu archivo) */
+/* 1. Reset y Variables de Cargo */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 :root {
     --bg-color: #191919;
-    --swatch-1: rgba(255, 255, 255, 0.85); /* Títulos principales */
-    --swatch-2: rgba(255, 255, 255, 0.75); /* Párrafos */
-    --swatch-4: rgba(255, 255, 255, 0.4);  /* Categorías y meta */
-    --swatch-6: rgba(255, 255, 255, 0.1);  /* Bordes y líneas */
+    --swatch-1: rgba(255, 255, 255, 0.85);
+    --swatch-4: rgba(255, 255, 255, 0.4);
+    --swatch-6: rgba(255, 255, 255, 0.1);
     --font-mono: "Monument Grotesk Semi-Mono Variable", "Courier New", monospace;
-    --font-sans: "Diatype Variable", Helvetica, Arial, sans-serif;
-}
-
-/* 2. Reset y Estructura Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     background-color: var(--bg-color);
-    color: var(--swatch-2);
+    color: var(--swatch-1);
     font-family: var(--font-mono);
-    font-size: 1.1rem;
-    line-height: 1.1;
-    overflow: hidden; /* Clave para el scroll independiente */
+    overflow: hidden; /* Bloquea el scroll de la página entera */
     height: 100vh;
 }
 
-/* 3. Menú e Intro (Fijos arriba) */
+/* 2. Capa Superior (Flotante) */
 .site-header, .site-intro {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--bg-color);
+    pointer-events: none; /* Permite clickear lo que está atrás si es necesario */
 }
 
 .site-header {
     height: 60px;
-    padding: 1.5rem 2rem;
+    padding: 20px;
     border-bottom: 1px solid var(--swatch-6);
-}
-
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
+    background-color: var(--bg-color);
+    pointer-events: auto;
 }
 
 .site-intro {
@@ -54,40 +39,71 @@ body {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     border-bottom: 1px solid var(--swatch-6);
+    background-color: var(--bg-color);
+    pointer-events: auto;
 }
+
+.top-nav { display: flex; justify-content: space-between; font-size: 11px; text-transform: uppercase; }
 
 .intro-column-left { border-right: 1px solid var(--swatch-6); }
 .intro-column-right { 
-    padding: 2.5rem 1.5rem; 
-    font-size: 0.95rem; 
+    padding: 30px 25px; 
+    font-size: 11px; 
     color: var(--swatch-4); 
     text-transform: uppercase;
-    line-height: 1.2;
-    max-width: 480px;
+    line-height: 1.4;
 }
 
-/* 4. Columnas de Contenido */
+/* 3. Columnas 100% Independientes */
 main {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    height: 100vh;
+    height: 100vh; /* Ocupan todo el alto de la pantalla */
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 .index-visuals, .index-list {
     height: 100vh;
-    overflow-y: auto;
-    padding-top: 220px; /* Suficiente espacio para el header + intro */
-    scrollbar-width: none; /* Ocultar scrollbar */
+    overflow-y: auto; /* Cada columna tiene su propio motor de scroll */
+    padding-top: 220px; /* Espacio para que el contenido nazca debajo de la intro */
+    scrollbar-width: none;
 }
 
 .index-visuals::-webkit-scrollbar, .index-list::-webkit-scrollbar { display: none; }
 
-/* 5. Columna Izquierda (Visuales) */
+/* 4. Estética de Contenido */
 .index-visuals {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 40px;
+    padding-right: 40px;
     border-right: 1px solid var(--swatch-6);
 }
+
+.list-header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 15px 25px;
+    color: var(--swatch-4);
+    font-size: 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--swatch-6);
+}
+
+.list-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 30px 25px;
+    border-bottom: 1px solid var(--swatch-6);
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.list-row:hover { opacity: 0.7; }
+
+.col-proj { font-size: 2.2rem; color: var(--swatch-1); }
+.col-cat { font-size: 10px; color: var(--swatch-4); padding-top: 8px; }
 
 .placeholder-box {
     width: 100%;
@@ -96,61 +112,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: var(--swatch-6);
-}
-
-.visual-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--swatch-4);
-    text-transform: uppercase;
-    margin-bottom: 4rem;
-}
-
-/* 6. Columna Derecha (Lista tipo Tabla) */
-.index-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.list-header {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--swatch-6);
-    font-size: 0.8rem;
-    color: var(--swatch-4);
-    text-transform: uppercase;
-}
-
-.list-row {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    padding: 2.5rem 1.5rem;
-    border-bottom: 1px solid var(--swatch-6);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s;
-}
-
-.list-row:hover { opacity: 0.6; }
-
-.col-cat {
-    font-size: 0.9rem;
-    color: var(--swatch-4);
-    padding-top: 0.4rem;
-    text-transform: uppercase;
-}
-
-.col-proj {
-    font-family: var(--font-mono);
-    font-size: 2.2rem; /* Tamaño grande de Cargo */
-    color: var(--swatch-1);
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+    margin-bottom: 50px;
 }
 
 a { color: inherit; text-decoration: none; }
