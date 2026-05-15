@@ -17,21 +17,7 @@ body {
     padding: 20px;
     border-bottom: 1px solid #333;
 }
-.site-intro {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Mantiene la proporción de la tabla */
-    padding: 60px 0; /* Más aire arriba y abajo como en Cargo */
-    border-bottom: 1px solid #333;
-}
 
-.intro-column-right {
-    padding-right: 40px;
-    font-size: 11px;
-    line-height: 1.6;
-    text-transform: uppercase;
-    color: #888;
-    max-width: 450px; /* Evita que el renglón sea eterno */
-}
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -49,31 +35,38 @@ body {
     margin-left: 20px;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
+/* Bloque de Intro (Párrafo debajo del menú) */
+.site-intro {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Mismo ancho que la tabla */
+    width: 100%;
+    border-bottom: 1px solid #333;
 }
 
-a:hover {
+.intro-column-left {
+    border-right: 1px solid #333; /* Línea que divide el hueco de la derecha */
+}
+
+.intro-column-right {
+    padding: 40px 25px;
+    font-size: 11px;
+    line-height: 1.6;
+    text-transform: uppercase;
     color: #888;
+    max-width: 450px;
 }
 
-/* Contenedor principal */
+/* Contenedor principal (Tabla y Visuales) */
 .index-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     width: 100%;
-    min-height: calc(100vh - 60px);
 }
 
 /* Columna Visual (Izquierda) */
 .index-visuals {
     padding: 40px;
     border-right: 1px solid #333;
-}
-
-.visual-item {
-    margin-bottom: 60px;
 }
 
 .placeholder-box {
@@ -108,31 +101,21 @@ a:hover {
     padding: 15px 25px;
     border-bottom: 1px solid #333;
     text-transform: uppercase;
-    align-items: center;
 }
 
 .list-header {
     color: #666;
     font-size: 10px;
-    letter-spacing: 2px;
-}
-
-.list-row {
-    transition: background 0.2s;
-}
-
-.list-row:hover {
-    background-color: #0a0a0a;
-}
-
-.col-cat {
-    font-size: 10px;
-    color: #888;
 }
 
 .col-proj {
     font-size: 20px;
     letter-spacing: 1px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
 
 img {
