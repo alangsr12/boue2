@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <div class="index-visuals">
+        {{ range .Site.RegularPages }}
+            <div class="visual-item">
+                <div class="placeholder-box">+</div>
+                <div class="visual-meta">
+                    <span>BOÜE</span>
+                    <span>{{ .Title }}</span>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+    <div class="index-list">
+        {{ range .Site.RegularPages }}
+        <a href="{{ .RelPermalink }}" class="list-row">
+            <span class="col-cat">General</span>
+            <span class="col-proj">{{ .Title }}</span>
+        </a>
+        {{ end }}
+    </div>
+{{ end }}
