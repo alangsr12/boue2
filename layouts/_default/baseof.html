@@ -19,7 +19,13 @@
             </div>
         </nav>
     </header>
-
+</header> <section class="site-intro">
+        <div class="intro-column-left">
+            </div>
+        <div class="intro-column-right">
+            <p>{{ .Site.Data.intro.texto }}</p>
+        </div>
+    </section>
     <main>
         {{ block "main" . }}{{ end }}
     </main>
